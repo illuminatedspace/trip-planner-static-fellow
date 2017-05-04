@@ -22,5 +22,9 @@ app.use('/', router)
 
 app.use((err, req, res, next) => {
   console.error(err.stack)
-  res.status(err.status || 500).send(err.message || '=-=-=-=-=-Oops. My bad.<<<<<<<<<<<<')
+  const error = {
+    message: err.message || "oops",
+    status: err.status || 500
+  }
+  res.render('error', error)
 })

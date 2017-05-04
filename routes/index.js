@@ -3,7 +3,7 @@ const router = express.Router()
 const db = require('../db')
 
 router.get('/', (req, res, next) => {
-  res.send('hello there!')
+  res.render('index')
 })
 
 module.exports = router
